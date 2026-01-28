@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formation IA pour directeurs d'ESMS - Gagner du temps grâce à l'IA en toute sécurité">
+    <title>Formation IA - Directeurs ESMS | APF France Handicap</title>
+    
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === VARIABLES ET BASE === */
+        :root {
+            --bleu-petrole: #00536A;
+            --jaune-orange: #F7A916;
+            --blanc: #FFFFFF;
+            --gris-clair: #F5F5F5;
+            --gris-texte: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', 'Calibri', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--bleu-petrole);
+            background-color: var(--blanc);
+        }
+        
+        /* === HEADER === */
+        header {
+            background: linear-gradient(135deg, var(--bleu-petrole) 0%, #007090 100%);
+            color: var(--blanc);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 83, 106, 0.15);
+        }
+        
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        h1 {
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--jaune-orange);
+        }
+        
+        .accroche {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+            opacity: 0.95;
+        }
+        
+        /* === CONTAINER === */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* === SECTIONS === */
+        section {
+            padding: 4rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: var(--gris-clair);
+        }
+        
+        h2 {
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--bleu-petrole);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--jaune-orange);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        
+        /* === INFO PRATIQUES === */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .info-card {
+            background: var(--blanc);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 83, 106, 0.1);
+            border-left: 4px solid var(--jaune-orange);
+        }
+        
+        .info-card h3 {
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-size: 1.3rem;
+            color: var(--bleu-petrole);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+        }
+        
+        /* === OBJECTIFS === */
+        .objectifs-list {
+            background: var(--blanc);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 83, 106, 0.1);
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+        
+        .objectifs-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .objectifs-list li {
+            padding: 1rem 1rem 1rem 3rem;
+            margin-bottom: 1rem;
+            background-color: var(--gris-clair);
+            border-radius: 8px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        .objectifs-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            color: var(--jaune-orange);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        /* === PROGRAMME - ACCORDÉON === */
+        .programme-container {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+        
+        .periode-titre {
+            background-color: var(--bleu-petrole);
+            color: var(--blanc);
+            padding: 1rem 1.5rem;
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .periode-titre:first-child {
+            margin-top: 0;
+        }
+        
+        .accordion-item {
+            background: var(--blanc);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 83, 106, 0.1);
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            background-color: var(--gris-clair);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: #e8e8e8;
+        }
+        
+        .accordion-header h3 {
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-size: 1.2rem;
+            color: var(--bleu-petrole);
+            margin: 0;
+        }
+        
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: var(--jaune-orange);
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .accordion-content-inner {
+            padding: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .accordion-content-inner strong {
+            color: var(--bleu-petrole);
+            display: block;
+            margin-top: 1rem;
+        }
+        
+        .accordion-content-inner strong:first-child {
+            margin-top: 0;
+        }
+        
+        .accordion-content-inner ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .accordion-content-inner li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* === CARTE ET TÉLÉCHARGEMENTS === */
+        .map-download-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 83, 106, 0.15);
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .download-card {
+            background: var(--blanc);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 83, 106, 0.1);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        
+        .download-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 83, 106, 0.2);
+        }
+        
+        .download-card h3 {
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-size: 1.2rem;
+            color: var(--bleu-petrole);
+            margin-bottom: 1rem;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            background-color: var(--jaune-orange);
+            color: var(--blanc);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-download:hover {
+            background-color: #d89410;
+        }
+        
+        /* === VISUEL THÉMATIQUE === */
+        .hero-visual {
+            background: linear-gradient(135deg, rgba(0, 83, 106, 0.9), rgba(0, 112, 144, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%2300536A" width="1200" height="400"/><circle fill="%23F7A916" opacity="0.1" cx="100" cy="100" r="80"/><circle fill="%23F7A916" opacity="0.1" cx="1100" cy="300" r="100"/><path fill="%23FFFFFF" opacity="0.05" d="M0,200 Q300,150 600,200 T1200,200 L1200,400 L0,400 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--blanc);
+        }
+        
+        .hero-visual h2 {
+            color: var(--blanc);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-visual h2::after {
+            background-color: var(--jaune-orange);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(247, 169, 22, 0.3);
+        }
+        
+        .feature-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--jaune-orange);
+        }
+        
+        .feature-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background-color: var(--bleu-petrole);
+            color: var(--blanc);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-contact h3 {
+            font-family: 'Poppins', 'Calibri', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--jaune-orange);
+        }
+        
+        .footer-contact p {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-contact a {
+            color: var(--blanc);
+            text-decoration: none;
+            border-bottom: 1px solid var(--jaune-orange);
+            transition: border-color 0.3s ease;
+        }
+        
+        .footer-contact a:hover {
+            border-bottom-color: var(--blanc);
+        }
+        
+        .footer-links {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-links a {
+            color: var(--jaune-orange);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--blanc);
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .map-download-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* === ACCESSIBILITÉ === */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* Focus visible pour navigation clavier */
+        *:focus-visible {
+            outline: 3px solid var(--jaune-orange);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo APF France Handicap" class="logo">
+            </div>
+            <p class="subtitle">Directeurs et directeurs adjoints d'ESMS</p>
+            <h1>Gagner du temps grâce à l'IA,<br>en toute sécurité</h1>
+            <p class="accroche">Une formation concrète, rassurante et immédiatement applicable pour alléger votre charge administrative grâce à l'intelligence artificielle.</p>
+        </div>
+    </header>
+
+    <!-- INFORMATIONS PRATIQUES -->
+    <section id="infos">
+        <div class="container">
+            <h2>Informations pratiques</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><span class="icon">📅</span> Date</h3>
+                    <p><strong>29 janvier 2026</strong><br>
+                    De 9h à 17h<br>
+                    (7 heures de formation)</p>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon">📍</span> Lieu</h3>
+                    <p>28 rue Charles de Gaulle<br>
+                    44240 La Chapelle-sur-Erdre</p>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon">👥</span> Public</h3>
+                    <p>Directeurs et directeurs adjoints d'établissements médico-sociaux ou sanitaires</p>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon">🎯</span> Modalités</h3>
+                    <p>Formation active et guidée<br>
+                    Présentiel ou distanciel synchrone<br>
+                    Aucun prérequis technique</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJECTIFS -->
+    <section id="objectifs">
+        <div class="container">
+            <h2>Objectifs de la formation</h2>
+            <div class="objectifs-list">
+                <ul>
+                    <li>Comprendre concrètement à quoi sert l'IA dans le métier de direction d'ESMS</li>
+                    <li>Se sentir en sécurité sur les questions de confidentialité et de cadre réglementaire</li>
+                    <li>Utiliser immédiatement un outil IA simple pour gagner du temps sur les tâches administratives</li>
+                </ul>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: var(--jaune-orange); font-weight: 500;">
+                    <strong>Critère de réussite :</strong> « J'ai gagné du temps dès le lendemain de la formation. »
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section id="programme">
+        <div class="container">
+            <h2>Programme détaillé</h2>
+            <div class="programme-container">
+                
+                <div class="periode-titre">🌅 Matinée — Comprendre et se rassurer</div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 1 — Accueil, cadre et attentes (30 min)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Installer un climat rassurant et utile.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>Présentation des objectifs concrets de la journée</li>
+                                <li>Recueil des attentes des participants</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Échanges guidés, tour de table sécurisé.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 2 — Dédramatiser l'IA et donner du sens (45 min)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Identifier ce que l'IA peut réellement apporter dans le quotidien d'un directeur.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>L'IA expliquée sans jargon</li>
+                                <li>Exemples métiers concrets</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Démonstrations commentées, échanges.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 3 — Identifier les usages utiles en ESMS (1h)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Identifier les tâches chronophages pouvant être aidées par l'IA.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>Rédaction de mails professionnels</li>
+                                <li>Comptes rendus de réunion</li>
+                                <li>Notes de service</li>
+                                <li>Synthèses de documents</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Travail guidé à partir du vécu professionnel.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 4 — Confidentialité, données et cadre sécurisé (45 min)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Expliquer les règles de base de la confidentialité.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>Données autorisées vs interdites</li>
+                                <li>Bonnes pratiques de sécurité</li>
+                                <li>Cadre réglementaire (RGPD)</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Cas concrets, questions-réponses.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="periode-titre">☀️ Après-midi — Pratiquer et repartir avec du concret</div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 5 — Prendre en main un outil IA simple (1h15)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Utiliser un outil IA simple pour produire un contenu utile.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>Démonstration pas à pas (mail, synthèse, reformulation)</li>
+                                <li>Prise en main guidée de l'outil</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Mise en pratique accompagnée, pas à pas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 6 — S'entraîner sur ses propres situations (1h)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Appliquer l'IA à une situation réelle de son établissement.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>Cas personnels choisis par les participants</li>
+                                <li>Application pratique immédiate</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Travail individuel accompagné, aide personnalisée.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Séquence 7 — Ancrage et projection (45 min)</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <strong>Objectif :</strong> Se projeter dans un usage simple dès le lendemain.
+                            <strong>Contenus :</strong>
+                            <ul>
+                                <li>Plan d'action personnel</li>
+                                <li>Rappels clés de la journée</li>
+                            </ul>
+                            <strong>Méthodes :</strong> Auto-évaluation guidée, partage volontaire.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUEL THÉMATIQUE -->
+    <section class="hero-visual">
+        <div class="hero-content">
+            <h2>Une formation anti-rejet, concrète et inclusive</h2>
+            <div class="hero-features">
+                <div class="feature-box">
+                    <h3>🤝 Rassurante</h3>
+                    <p>Approche bienveillante adaptée aux personnes éloignées du numérique</p>
+                </div>
+                <div class="feature-box">
+                    <h3>⚡ Immédiate</h3>
+                    <p>Des outils utilisables dès le lendemain de la formation</p>
+                </div>
+                <div class="feature-box">
+                    <h3>♿ Accessible</h3>
+                    <p>Supports FALC, accessibles PMR, adaptés dys, malvoyance et daltonisme</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALISATION ET TÉLÉCHARGEMENTS -->
+    <section id="infos-pratiques">
+        <div class="container">
+            <h2>Localisation et documents</h2>
+            <div class="map-download-grid">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2703.9!2d-1.5503!3d47.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ece4d4d4d4d4%3A0x0!2s28%20Rue%20Charles%20de%20Gaulle%2C%2044240%20La%20Chapelle-sur-Erdre!5e0!3m2!1sfr!2sfr!4v1234567890"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation de la formation - 28 rue Charles de Gaulle, La Chapelle-sur-Erdre">
+                    </iframe>
+                </div>
+                <div class="download-section">
+                    <div class="download-card">
+                        <h3>📄 Programme complet</h3>
+                        <p style="margin-bottom: 1.5rem;">Téléchargez le programme détaillé de la formation</p>
+                        <a href="programme.pdf" class="btn-download" download>Télécharger le programme (PDF)</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>📚 Livret stagiaire</h3>
+                        <p style="margin-bottom: 1.5rem;">Accédez à votre livret stagiaire complet</p>
+                        <a href="livret-stagiaire.pdf" class="btn-download" download>Télécharger le livret (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><strong>Formatrice :</strong> Clémentine BERTHE</p>
+                <p>📧 <a href="mailto:clementine.berthe@apf.asso.fr">clementine.berthe@apf.asso.fr</a></p>
+                <p>📞 <a href="tel:+33669394796">06 69 39 47 96</a></p>
+            </div>
+            <div class="footer-links">
+                <p>
+                    <a href="https://actionspolitiques.apf-francehandicap.org/" target="_blank" rel="noopener noreferrer">
+                        Politique d'inclusion et de gestion du handicap
+                    </a>
+                </p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    © 2026 APF France Handicap - Tous droits réservés
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT ACCORDÉON -->
+    <script>
+        // Gestion de l'accordéon
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const content = item.querySelector('.accordion-content');
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fermer tous les autres accordéons (optionnel)
+                    // accordionHeaders.forEach(h => {
+                    //     const i = h.parentElement;
+                    //     i.classList.remove('active');
+                    //     i.querySelector('.accordion-content').style.maxHeight = '0';
+                    // });
+                    
+                    // Toggle l'accordéon cliqué
+                    if (isActive) {
+                        item.classList.remove('active');
+                        content.style.maxHeight = '0';
+                    } else {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            // Ouvrir le premier accordéon par défaut
+            const firstItem = document.querySelector('.accordion-item');
+            if (firstItem) {
+                firstItem.classList.add('active');
+                const firstContent = firstItem.querySelector('.accordion-content');
+                firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
